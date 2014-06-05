@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<meta name="description" value="ROLEVBLF" />
+		<meta name="keywords" value="example, carousel, full, fluid, liquid, window, background, images" />
+		<title>Get ready for awesomeness!</title>
+
+		<link rel="stylesheet" type="text/css" href="jquery.wordrotator.css">
+		<link rel="stylesheet" type="text/css" href="animate.css">
+		<link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script src="jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+		<script src="jquery.wordrotator.js"type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#carousel').carouFredSel({
+					width: $(window).width(),
+					height: $(window).height(),
+					align: false,
+					items: {
+						visible: 1,
+						width: 'variable',
+						height: 'variable'
+					}
+				});
+
+				$(window).resize(function() {
+					var newCss = {
+						width: $(window).width(),
+						height: $(window).height()
+					};
+					$('#carousel').css( 'width', newCss.width*4 );
+					$('#carousel').parent().css( newCss );
+					$('#carousel div').css( newCss );
+				}).resize();
+
+				$('select#fx').change(function() {
+					$('#carousel').trigger('configuration', ['auto.fx', 'scroll']);
+				});
+			});
+
+			$(function () {
+        $("#myWords").wordsrotator({
+            words: [ 'SCRAPBOOK', 'CRAPBOOK'],
+            speed: 3000
+        });
+    });
+		</script>
+		<style type="text/css">
+			html, body {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				min-height: 600px;
+			}
+			#wrapper {
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			.caroufredsel_wrapper {
+				width: 100% !important;
+				height: 100% !important;
+			}
+			#carousel div {
+				width: 100%;
+
+				overflow: hidden;
+				float: left;
+			}
+			#carousel div img {
+				width: auto;
+				height: auto;
+				min-width: 100%;
+				min-height: 100%;
+			}
+			#text {
+				width: 350px;
+				height: 100px;
+				padding: 50px;
+				margin: -225px 0 0 -225px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: 2;
+			}
+			#text h4 {
+				font-size: 33px;
+				line-height: 36px;
+				margin: 0 0 20px 0;
+			}
+			#text small, #text small * {
+				font-size: 12px;
+				color: #666;
+			}
+            
+            h1 {
+                font-size: 80px;
+            }
+            a{
+                margin-left: 45px;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="carousel">
+				<div><img src="img/1.jpg" alt=""/></div>
+				<div><img src="img/2.jpg" alt="" /></div>
+				<div><img src="img/3.jpg" alt=""/></div>
+				<div><img src="img/4.jpg" alt=""/></div>
+                <div><img src="img/5.jpg" alt=""/></div>
+                <div><img src="img/6.jpg" alt="" width="1280" height="850" /></div>
+                <div><img src="img/7.jpg" alt="" width="1280" height="850" /></div>
+                <div><img src="img/8.jpg" alt="" width="1280" height="850" /></div>
+                <div><img src="img/9.jpg" alt="" width="1280" height="850" /></div>
+                <div><img src="img/10.jpg" alt="" width="1280" height="850" /></div>
+                <div><img src="img/11.jpg" alt="" width="1280" height="850" /></div>
+                <div><img src="img/12.jpg" alt="" width="1280" height="850" /></div>
+			</div>
+			<div id="text">
+                <div id="headerwrap">
+                    <h1>THE ULTIMATE <span id="myWords">SCRAPBOOK</span></h1>
+				</div>
+                <a href="data/index.html"><img src="img/button.png"/></a>
+            </div>
+		</div>
+		
+	</body>
+</html>
